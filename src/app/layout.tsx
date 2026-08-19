@@ -1,28 +1,28 @@
 import type { Metadata } from 'next';
-import { Inter, Space_Grotesk } from 'next/font/google';
+import { Inter, Plus_Jakarta_Sans } from 'next/font/google';
 import './globals.css';
 import { Providers } from './providers';
 
 const inter = Inter({
   subsets: ['latin'],
-  variable: '--font-inter',
+  variable: '--font-body',
   display: 'swap',
 });
 
-const spaceGrotesk = Space_Grotesk({
+const plusJakarta = Plus_Jakarta_Sans({
   subsets: ['latin'],
   variable: '--font-heading',
   display: 'swap',
 });
 
 export const metadata: Metadata = {
-  title: 'Arya Pratama | Portfolio',
-  description: 'Full-Stack Developer & UI/UX Designer - Mengubah ide menjadi pengalaman digital yang luar biasa',
-  keywords: ['portfolio', 'developer', 'web developer', 'full-stack', 'ui/ux', 'designer'],
-  authors: [{ name: 'Arya Pratama' }],
+  title: 'Halim Samodra | Portfolio',
+  description: 'Full-Stack Developer — Membangun solusi web yang elegan dan fungsional',
+  keywords: ['portfolio', 'developer', 'web developer', 'full-stack', 'halim samodra'],
+  authors: [{ name: 'Halim Samodra' }],
   openGraph: {
-    title: 'Arya Pratama | Portfolio',
-    description: 'Full-Stack Developer & UI/UX Designer',
+    title: 'Halim Samodra | Portfolio',
+    description: 'Full-Stack Developer',
     type: 'website',
   },
 };
@@ -34,7 +34,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="id" suppressHydrationWarning>
-      <body className={`${inter.variable} ${spaceGrotesk.variable} font-sans antialiased`}>
+      <body className={`${inter.variable} ${plusJakarta.variable} font-sans antialiased`}>
         <Providers>{children}</Providers>
       </body>
     </html>

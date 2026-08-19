@@ -2,14 +2,22 @@
 
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Code, Database, Figma, Globe, Server, GitBranch, Cloud, Palette, Terminal, Box, Cpu, Layers, Monitor, Smartphone, Zap } from 'lucide-react';
+import { Code, Database, Server, GitBranch, Cloud, Terminal, Layers, Wind, Triangle } from 'lucide-react';
 import ScrollReveal from '@/components/ui/ScrollReveal';
 import SectionHeading from '@/components/ui/SectionHeading';
 import { skills } from '@/data/portfolio';
 import { cn } from '@/lib/utils';
 
-const iconMap: Record<string, React.FC<any>> = {
-  Code, Database, Figma, Globe, Server, GitBranch, Cloud, Palette, Terminal, Box, Cpu, Layers, Monitor, Smartphone, Zap
+const iconMap: Record<string, React.FC<{ className?: string }>> = {
+  code: Code,
+  triangle: Triangle,
+  wind: Wind,
+  layers: Layers,
+  server: Server,
+  database: Database,
+  terminal: Terminal,
+  'git-branch': GitBranch,
+  cloud: Cloud,
 };
 
 export default function Skills() {
@@ -33,8 +41,8 @@ export default function Skills() {
               className={cn(
                 "px-6 py-2 rounded-full text-sm font-medium transition-all duration-300",
                 activeCategory === cat 
-                  ? "bg-gradient-to-r from-neon-blue to-neon-violet text-white shadow-[0_0_15px_rgba(0,240,255,0.4)]" 
-                  : "bg-dark-surface border border-dark-border text-gray-400 hover:text-white"
+                  ? "btn-primary shadow-[0_0_15px_var(--shadow-accent)]" 
+                  : "bg-[var(--theme-surface)] border border-[var(--theme-border)] text-[var(--color-muted-foreground)] hover:text-[var(--theme-text)]"
               )}
             >
               {cat}
@@ -42,10 +50,10 @@ export default function Skills() {
           ))}
         </div>
 
-        <motion.div layout className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+        <motion.div layout className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
           <AnimatePresence>
             {filteredSkills.map((skill, index) => {
-              const IconComponent = iconMap[skill.icon] || Code;
+              const IconComponent = iconMap[skill.iconName] || Code;
               return (
                 <motion.div
                   key={skill.name}
@@ -55,22 +63,22 @@ export default function Skills() {
                   exit={{ opacity: 0, scale: 0.8 }}
                   transition={{ duration: 0.3, delay: index * 0.05 }}
                   whileHover={{ scale: 1.05, y: -4 }}
-                  className="glass p-6 rounded-2xl flex flex-col items-center justify-center gap-4 border border-dark-border hover:shadow-[0_0_20px_rgba(0,240,255,0.3)] hover:border-neon-blue transition-all group"
+                  className="glass p-6 rounded-2xl flex flex-col items-center justify-center gap-4 border border-[var(--theme-border)] hover:shadow-[0_0_20px_var(--shadow-accent)] hover:border-[var(--color-palette-medium)] transition-all group"
                 >
-                  <IconComponent className="w-12 h-12 text-neon-blue group-hover:text-neon-violet transition-colors" />
-                  <h3 className="font-semibold text-lg">{skill.name}</h3>
+                  <IconComponent className="w-12 h-12 text-[var(--color-palette-medium)] group-hover:text-[var(--color-palette-dark)] transition-colors" />
+                  <h3 className="font-semibold text-lg text-[var(--theme-text)]">{skill.name}</h3>
                   <div className="w-full">
                     <div className="flex justify-between mb-1 text-sm">
-                      <span>Profiency</span>
-                      <span className="text-neon-cyan">{skill.level}%</span>
+                      <span className="text-[var(--color-muted-foreground)]">Proficiency</span>
+                      <span className="text-[var(--color-palette-light)]">{skill.level}%</span>
                     </div>
-                    <div className="w-full bg-dark-base rounded-full h-1.5 overflow-hidden">
+                    <div className="w-full bg-[var(--theme-bg)] rounded-full h-1.5 overflow-hidden">
                       <motion.div
                         initial={{ width: 0 }}
                         whileInView={{ width: `${skill.level}%` }}
                         transition={{ duration: 1, delay: 0.2 }}
                         viewport={{ once: true }}
-                        className="bg-gradient-to-r from-neon-blue to-neon-violet h-full rounded-full"
+                        className="bg-gradient-to-r from-[var(--color-palette-medium)] to-[var(--color-palette-dark)] h-full rounded-full"
                       />
                     </div>
                   </div>

@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Quote, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Quote, ChevronLeft, ChevronRight, User } from 'lucide-react';
 import ScrollReveal from '@/components/ui/ScrollReveal';
 import SectionHeading from '@/components/ui/SectionHeading';
 import { testimonials } from '@/data/portfolio';
@@ -14,7 +14,7 @@ export default function Testimonials() {
   const [isPaused, setIsPaused] = useState(false);
 
   useEffect(() => {
-    if (isPaused) return;
+    if (isPaused || testimonials.length <= 1) return;
     const interval = setInterval(() => {
       setDirection(1);
       setCurrentIndex((prev) => (prev + 1) % testimonials.length);
@@ -74,28 +74,28 @@ export default function Testimonials() {
                 transition={{ duration: 0.4, type: "spring", stiffness: 300, damping: 30 }}
                 className="absolute inset-0"
               >
-                <div className="glass h-full p-8 md:p-12 rounded-3xl border border-dark-border flex flex-col items-center text-center justify-center gap-6 relative">
-                  <Quote className="w-16 h-16 text-neon-blue opacity-30 absolute top-8 left-8" />
+                <div className="glass h-full p-8 md:p-12 rounded-3xl border border-[var(--theme-border)] flex flex-col items-center text-center justify-center gap-6 relative">
+                  <Quote className="w-16 h-16 text-[var(--color-palette-medium)] opacity-30 absolute top-8 left-8" />
                   
-                  <p className="text-lg md:text-xl italic text-gray-300 leading-relaxed z-10 relative">
-                    "{activeTestimonial.quote}"
+                  <p className="text-lg md:text-xl italic text-[var(--color-muted-foreground)] leading-relaxed z-10 relative">
+                    &ldquo;{activeTestimonial.quote}&rdquo;
                   </p>
                   
-                  <div className="w-16 h-[1px] bg-dark-border my-2" />
+                  <div className="w-16 h-[1px] bg-[var(--theme-border)] my-2" />
                   
                   <div className="flex flex-col items-center gap-3">
-                    <div className="w-16 h-16 rounded-full bg-gradient-to-tr from-neon-blue to-neon-violet p-[2px]">
-                      <div className="w-full h-full rounded-full bg-dark-surface flex items-center justify-center overflow-hidden">
-                        {activeTestimonial.avatar ? (
-                          <img src={activeTestimonial.avatar} alt={activeTestimonial.name} className="w-full h-full object-cover" />
+                    <div className="w-16 h-16 rounded-full bg-gradient-to-tr from-[var(--color-palette-medium)] to-[var(--color-palette-dark)] p-[2px]">
+                      <div className="w-full h-full rounded-full bg-[var(--theme-surface)] flex items-center justify-center overflow-hidden">
+                        {activeTestimonial.avatarUrl ? (
+                          <img src={activeTestimonial.avatarUrl} alt={activeTestimonial.name} loading="lazy" className="w-full h-full object-cover" />
                         ) : (
-                          <span className="text-xl font-bold">{activeTestimonial.name.charAt(0)}</span>
+                          <User className="w-8 h-8 text-[var(--color-muted-foreground)]" />
                         )}
                       </div>
                     </div>
                     <div>
-                      <h4 className="font-bold text-white text-lg">{activeTestimonial.name}</h4>
-                      <p className="text-sm text-neon-cyan">{activeTestimonial.role} di {activeTestimonial.company}</p>
+                      <h4 className="font-bold text-[var(--theme-text)] text-lg">{activeTestimonial.name}</h4>
+                      <p className="text-sm text-[var(--color-palette-light)]">{activeTestimonial.company}</p>
                     </div>
                   </div>
                 </div>
@@ -103,19 +103,23 @@ export default function Testimonials() {
             </AnimatePresence>
           </div>
           
-          <button 
-            onClick={prevSlide}
-            className="absolute left-0 md:-left-16 top-1/2 -translate-y-1/2 p-3 rounded-full bg-dark-surface border border-dark-border hover:border-neon-blue text-white transition-colors z-20"
-          >
-            <ChevronLeft className="w-6 h-6" />
-          </button>
-          
-          <button 
-            onClick={nextSlide}
-            className="absolute right-0 md:-right-16 top-1/2 -translate-y-1/2 p-3 rounded-full bg-dark-surface border border-dark-border hover:border-neon-blue text-white transition-colors z-20"
-          >
-            <ChevronRight className="w-6 h-6" />
-          </button>
+          {testimonials.length > 1 && (
+            <>
+              <button 
+                onClick={prevSlide}
+                className="absolute left-0 md:-left-16 top-1/2 -translate-y-1/2 p-3 rounded-full bg-[var(--theme-surface)] border border-[var(--theme-border)] hover:border-[var(--color-palette-medium)] text-[var(--theme-text)] transition-colors z-20"
+              >
+                <ChevronLeft className="w-6 h-6" />
+              </button>
+              
+              <button 
+                onClick={nextSlide}
+                className="absolute right-0 md:-right-16 top-1/2 -translate-y-1/2 p-3 rounded-full bg-[var(--theme-surface)] border border-[var(--theme-border)] hover:border-[var(--color-palette-medium)] text-[var(--theme-text)] transition-colors z-20"
+              >
+                <ChevronRight className="w-6 h-6" />
+              </button>
+            </>
+          )}
           
           <div className="flex justify-center gap-3 mt-8">
             {testimonials.map((_, idx) => (
@@ -127,7 +131,7 @@ export default function Testimonials() {
                 }}
                 className={cn(
                   "w-3 h-3 rounded-full transition-all duration-300",
-                  idx === currentIndex ? "bg-neon-blue w-8" : "bg-dark-border hover:bg-gray-500"
+                  idx === currentIndex ? "bg-[var(--color-palette-medium)] w-8" : "bg-[var(--theme-border)] hover:bg-[var(--color-palette-light)]"
                 )}
               />
             ))}
