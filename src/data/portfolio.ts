@@ -19,7 +19,7 @@ export const personalInfo: PersonalInfo = {
   displayName: 'Halim Samodra',
   role: 'Full-Stack Developer',
   tagline: 'Membangun solusi web yang elegan dan fungsional',
-  bio: 'Saya Halim Samodra, seorang Full-Stack Developer dengan pengalaman 3 tahun dalam pengembangan web. Saat ini saya melanjutkan pendidikan di PPQIT Almahir sambil terus mengasah skill di bidang teknologi. Berbasis di Semarang, Indonesia.',
+  bio: 'Saya Halim Samodra, seorang Full-Stack Developer dengan pengalaman 2 tahun dalam pengembangan web. Saat ini saya melanjutkan pendidikan di PPQIT Almahir sambil terus mengasah skill di bidang teknologi. Berbasis di Semarang, Indonesia.',
   socialLinks: {
     github: 'https://github.com/halimsa11',
     instagram: 'https://www.instagram.com/umymind/',
@@ -27,10 +27,10 @@ export const personalInfo: PersonalInfo = {
   email: 'halimsamodra2009@gmail.com',
   phone: '+6281228025019',
   location: 'Semarang, Indonesia',
-  yearsExperience: 3,
-  totalProjects: 20,
-  happyClients: 20,
-  awardsWon: 10,
+  yearsExperience: 2,
+  totalProjects: 25,
+  happyClients: 10,
+  awardsWon: 3,
 };
 
 export interface Skill {
