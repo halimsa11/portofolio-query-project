@@ -12,14 +12,14 @@
   --color-dark-card: #234d28;
   --color-dark-border: #2d6a34;
 
-  --color-light-base: #f0f9f1;
+  --color-light-base: #f8faf9;
   --color-light-surface: #ffffff;
-  --color-light-card: #f5fbf6;
-  --color-light-border: #c8e6c9;
-  --color-light-text: #1b5e20;
+  --color-light-card: #ffffff;
+  --color-light-border: #e2e8e4;
+  --color-light-text: #1f2937; /* Neutral dark gray for better readability */
 
-  --color-foreground: #1b5e20;
-  --color-muted-foreground: #2e7d32;
+  --color-foreground: #1f2937;
+  --color-muted-foreground: #4b5563; /* Neutral medium gray */
 
   --font-sans: var(--font-body), 'Inter', system-ui, sans-serif;
   --font-heading: var(--font-heading), 'Inter', system-ui, sans-serif;
@@ -39,11 +39,11 @@
   --theme-text: var(--color-light-text);
   --theme-accent: var(--color-palette-medium);
   --theme-accent-dark: var(--color-palette-dark);
-  --color-foreground: #1b5e20;
-  --color-muted-foreground: #388e3c;
-  --glass-bg: rgba(255, 255, 255, 0.78);
-  --glass-border: rgba(27, 94, 32, 0.12);
-  --shadow-accent: rgba(102, 187, 106, 0.25);
+  --color-foreground: var(--color-light-text);
+  --color-muted-foreground: #4b5563;
+  --glass-bg: rgba(255, 255, 255, 0.85);
+  --glass-border: rgba(0, 0, 0, 0.08);
+  --shadow-accent: rgba(102, 187, 106, 0.15);
 }
 
 /* ====== DARK MODE ====== */
