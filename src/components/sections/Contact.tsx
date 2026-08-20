@@ -27,21 +27,36 @@ export default function Contact() {
     setSubmitError('');
 
     try {
-      const response = await fetch('/api/contact', {
+      const response = await fetch(`https://formsubmit.co/ajax/${personalInfo.email}`, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data),
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+        body: JSON.stringify({
+          name: data.name,
+          email: data.email,
+          _replyto: data.email,
+          _subject: `[Portofolio] ${data.subject}`,
+          _template: 'table',
+          _captcha: 'false',
+          subject: data.subject,
+          message: data.message,
+        }),
       });
 
-      if (!response.ok) {
-        throw new Error('Gagal mengirim');
+      const result = await response.json().catch(() => null);
+      const ok = response.ok && (result?.success === true || result?.success === 'true');
+
+      if (!ok) {
+        throw new Error(result?.message || 'Gagal mengirim');
       }
 
       setIsSuccess(true);
       reset();
-      setTimeout(() => setIsSuccess(false), 3000);
+      setTimeout(() => setIsSuccess(false), 4000);
     } catch {
-      setSubmitError('Pesan gagal terkirim. Coba lagi atau hubungi lewat WhatsApp.');
+      setSubmitError('Pesan belum masuk. Cek Gmail (termasuk Spam) lalu klik email konfirmasi FormSubmit, kemudian kirim ulang.');
     } finally {
       setIsSubmitting(false);
     }
@@ -126,7 +141,6 @@ export default function Contact() {
                 {[
                   { Icon: Github, href: personalInfo.socialLinks.github },
                   { Icon: Instagram, href: personalInfo.socialLinks.instagram },
-                  { Icon: FaWhatsapp, href: personalInfo.whatsappUrl },
                 ].map(({ Icon, href }, idx) => (
                   <a key={idx} href={href} target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full glass border border-[var(--theme-border)] flex items-center justify-center hover:bg-[var(--color-palette-medium)] hover:text-white hover:border-[var(--color-palette-medium)] transition-colors">
                     <Icon className="w-4 h-4" />
