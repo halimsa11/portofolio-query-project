@@ -40,7 +40,7 @@ export default function Experience() {
                         {exp.period}
                       </div>
                       
-                      <h3 className="text-xl md:text-2xl font-bold mb-1 text-[var(--theme-text)]">{exp.role}</h3>
+                      <h3 className="font-heading text-xl md:text-2xl font-semibold mb-1 text-[var(--theme-text)]">{exp.role}</h3>
                       <h4 className="text-[var(--color-palette-light)] font-medium mb-4">{exp.company}</h4>
                       
                       <p className="text-[var(--color-muted-foreground)] mb-6">{exp.description}</p>

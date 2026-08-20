@@ -42,7 +42,7 @@ export default function Contact() {
           {/* Left Column */}
           <ScrollReveal direction="left" className="space-y-8">
             <div>
-              <h3 className="text-3xl font-bold text-gradient mb-4">
+              <h3 className="font-heading text-3xl font-semibold text-gradient mb-4">
                 Mari Bekerja Sama
               </h3>
               <p className="text-[var(--color-muted-foreground)] leading-relaxed text-lg">

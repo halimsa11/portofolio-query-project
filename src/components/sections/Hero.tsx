@@ -30,11 +30,23 @@ export default function Hero() {
   const nameLetters = Array.from(personalInfo.name);
 
   return (
-    <section id="beranda" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[var(--theme-bg)]">
+    <section id="beranda" className="relative min-h-screen flex items-center justify-center overflow-hidden">
       <ParticleBackground />
 
+      <div
+        aria-hidden
+        className="pointer-events-none absolute -top-24 left-1/2 h-[28rem] w-[28rem] -translate-x-1/2 rounded-full bg-[var(--orb-teal)] blur-3xl animate-[orb-drift_18s_ease-in-out_infinite]"
+      />
+      <div
+        aria-hidden
+        className="pointer-events-none absolute bottom-10 right-[8%] h-64 w-64 rounded-full bg-[var(--orb-indigo)] blur-3xl animate-[orb-drift_22s_ease-in-out_infinite_reverse]"
+      />
+
       <div className="relative z-10 container mx-auto px-4 md:px-6 flex flex-col items-center text-center">
-        <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold font-heading mb-6 flex flex-wrap justify-center text-center">
+        <p className="mb-5 font-display text-xs md:text-sm uppercase tracking-[0.28em] text-[var(--color-palette-medium)]">
+          Full-Stack Developer
+        </p>
+        <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-heading font-semibold tracking-tight mb-6 flex flex-wrap justify-center text-center">
           {nameLetters.map((letter, i) => (
             <motion.span
               key={i}

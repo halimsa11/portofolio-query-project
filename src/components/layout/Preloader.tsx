@@ -46,7 +46,7 @@ export default function Preloader({ isLoading, setIsLoading }: PreloaderProps) {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5, duration: 0.5 }}
-              className="text-2xl font-bold text-gradient mb-8"
+              className="font-heading text-2xl font-semibold text-gradient mb-8"
             >
               {personalInfo.name}
             </motion.div>

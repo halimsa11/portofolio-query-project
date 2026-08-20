@@ -77,7 +77,7 @@ export default function Testimonials() {
                 <div className="glass h-full p-8 md:p-12 rounded-3xl border border-[var(--theme-border)] flex flex-col items-center text-center justify-center gap-6 relative">
                   <Quote className="w-16 h-16 text-[var(--color-palette-medium)] opacity-30 absolute top-8 left-8" />
                   
-                  <p className="text-lg md:text-xl italic text-[var(--color-muted-foreground)] leading-relaxed z-10 relative">
+                  <p className="font-heading text-lg md:text-xl italic text-[var(--color-muted-foreground)] leading-relaxed z-10 relative">
                     &ldquo;{activeTestimonial.quote}&rdquo;
                   </p>
                   

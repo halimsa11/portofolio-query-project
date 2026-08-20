@@ -66,8 +66,8 @@ export default function Navbar() {
             <div className="p-1.5 rounded-lg bg-[var(--color-palette-medium)]/10 text-[var(--color-palette-medium)] group-hover:bg-[var(--color-palette-medium)] group-hover:text-white transition-colors">
               <Code2 size={22} className="md:w-6 md:h-6" />
             </div>
-            <span className="text-lg md:text-2xl tracking-tight text-[var(--theme-text)]">
-              halim<span className="text-[var(--color-palette-medium)]">samodra</span>
+            <span className="font-display text-lg md:text-2xl tracking-tight text-[var(--theme-text)]">
+              halim<span className="text-gradient">samodra</span>
             </span>
           </button>
 
@@ -77,7 +77,7 @@ export default function Navbar() {
               <button
                 key={item.href}
                 onClick={() => scrollToSection(item.href.substring(1))}
-                className="text-sm font-medium transition-colors text-[var(--theme-text)] hover:text-[var(--color-palette-medium)]"
+                className="font-display text-sm font-medium tracking-wide transition-colors text-[var(--theme-text)] hover:text-[var(--color-palette-medium)]"
               >
                 {item.label}
               </button>
@@ -114,7 +114,7 @@ export default function Navbar() {
               <button
                 key={item.href}
                 onClick={() => scrollToSection(item.href.substring(1))}
-                className="text-2xl font-bold transition-all px-6 py-2 rounded-full text-[var(--theme-text)] hover:text-[var(--color-palette-medium)]"
+                className="font-heading text-2xl font-semibold transition-all px-6 py-2 rounded-full text-[var(--theme-text)] hover:text-[var(--color-palette-medium)]"
               >
                 {item.label}
               </button>

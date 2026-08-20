@@ -10,11 +10,11 @@ interface SectionHeadingProps {
 export default function SectionHeading({ title, subtitle, className = '' }: SectionHeadingProps) {
   return (
     <ScrollReveal className={`flex flex-col items-center justify-center text-center ${className}`}>
-      <h2 className="font-heading text-3xl md:text-5xl font-bold text-gradient mb-4 pb-1">
+      <h2 className="font-heading text-3xl md:text-5xl font-semibold tracking-tight text-gradient mb-4 pb-1">
         {title}
       </h2>
       {subtitle && (
-        <p className="text-[var(--color-muted-foreground)] text-sm md:text-base max-w-2xl mx-auto mb-6 opacity-80">
+        <p className="font-display text-[var(--color-muted-foreground)] text-sm md:text-base tracking-wide max-w-2xl mx-auto mb-6 opacity-90">
           {subtitle}
         </p>
       )}

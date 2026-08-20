@@ -12,7 +12,7 @@ function StatCard({ endValue, label }: { endValue: number; label: string }) {
   const { count, ref } = useCountUp(endValue, 2000);
   return (
     <div ref={ref} className="glass p-6 rounded-2xl border border-[var(--theme-border)] hover:border-[var(--color-palette-medium)] hover:shadow-[0_0_15px_var(--shadow-accent)] transition-all duration-300">
-      <div className="text-4xl font-bold text-gradient mb-2">
+      <div className="font-heading text-4xl font-semibold text-gradient mb-2">
         {count}+
       </div>
       <div className="text-sm text-[var(--color-muted-foreground)]">{label}</div>

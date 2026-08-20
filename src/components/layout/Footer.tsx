@@ -38,8 +38,8 @@ export default function Footer() {
                 <div className="p-1.5 rounded-lg bg-[var(--color-palette-medium)]/10 text-[var(--color-palette-medium)]">
                   <Code2 size={24} />
                 </div>
-                <h3 className="text-2xl tracking-tight text-[var(--theme-text)]">
-                  halim<span className="text-[var(--color-palette-medium)]">samodra</span>
+                <h3 className="font-display text-2xl tracking-tight text-[var(--theme-text)]">
+                  halim<span className="text-gradient">samodra</span>
                 </h3>
               </div>
               <p className="text-[var(--color-muted-foreground)] text-sm leading-relaxed">
@@ -52,7 +52,7 @@ export default function Footer() {
 
             {/* Quick Links */}
             <div className="space-y-4">
-              <h4 className="text-lg font-semibold text-[var(--theme-text)]">Navigasi</h4>
+              <h4 className="font-heading text-lg font-semibold text-[var(--theme-text)]">Navigasi</h4>
               <ul className="space-y-2">
                 {navItems.map((item) => (
                   <li key={item.href}>
@@ -72,7 +72,7 @@ export default function Footer() {
 
             {/* Social */}
             <div className="space-y-4">
-              <h4 className="text-lg font-semibold text-[var(--theme-text)]">Terhubung</h4>
+              <h4 className="font-heading text-lg font-semibold text-[var(--theme-text)]">Terhubung</h4>
               <div className="flex space-x-3">
                 {socialLinks.map((social, index) => (
                   <motion.a

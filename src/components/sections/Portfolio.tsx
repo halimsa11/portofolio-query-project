@@ -85,7 +85,7 @@ export default function Portfolio() {
                     </div>
                     <div className="p-6 flex flex-col flex-1">
                       <div className="text-sm font-medium text-[var(--color-palette-medium)] mb-2">{project.category}</div>
-                      <h3 className="text-xl font-bold text-[var(--theme-text)] mb-2">{project.title}</h3>
+                      <h3 className="font-heading text-xl font-semibold text-[var(--theme-text)] mb-2">{project.title}</h3>
                       <p className="text-[var(--color-muted-foreground)] text-sm mb-4 line-clamp-3">
                         {project.description}
                       </p>

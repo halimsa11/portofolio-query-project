@@ -70,7 +70,7 @@ export default function Skills() {
                   className="glass p-6 rounded-2xl flex flex-col items-center justify-center gap-4 border border-[var(--theme-border)] hover:shadow-[0_0_20px_var(--shadow-accent)] hover:border-[var(--color-palette-medium)] transition-all group"
                 >
                   <IconComponent className="w-12 h-12 text-[var(--color-palette-medium)] group-hover:text-[var(--color-palette-dark)] transition-colors" />
-                  <h3 className="font-semibold text-lg text-[var(--theme-text)]">{skill.name}</h3>
+                  <h3 className="font-display font-semibold text-lg text-[var(--theme-text)]">{skill.name}</h3>
                   <div className="w-full">
                     <div className="flex justify-between mb-1 text-sm">
                       <span className="text-[var(--color-muted-foreground)]">Proficiency</span>
