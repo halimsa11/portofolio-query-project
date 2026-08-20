@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { Github, Instagram, Mail, ArrowUp, Code2 } from "lucide-react";
+import { FaWhatsapp } from "react-icons/fa";
 import { motion } from "motion/react";
 import { personalInfo, navItems } from "@/data/portfolio";
 import ScrollReveal from "@/components/ui/ScrollReveal";
@@ -25,6 +26,7 @@ export default function Footer() {
     { icon: <Github size={20} />, href: personalInfo.socialLinks.github, label: 'GitHub' },
     { icon: <Instagram size={20} />, href: personalInfo.socialLinks.instagram, label: 'Instagram' },
     { icon: <Mail size={20} />, href: `mailto:${personalInfo.email}`, label: 'Email' },
+    { icon: <FaWhatsapp size={20} />, href: personalInfo.whatsappUrl, label: 'WhatsApp' },
   ];
 
   return (
@@ -89,8 +91,16 @@ export default function Footer() {
                 ))}
               </div>
               <div className="text-sm text-[var(--color-muted-foreground)] space-y-1">
-                <p>📧 {personalInfo.email}</p>
-                <p>📱 {personalInfo.phone}</p>
+                <p>
+                  <a href={`mailto:${personalInfo.email}`} className="hover:text-[var(--color-palette-medium)] transition-colors">
+                    📧 {personalInfo.email}
+                  </a>
+                </p>
+                <p>
+                  <a href={personalInfo.whatsappUrl} target="_blank" rel="noopener noreferrer" className="hover:text-[var(--color-palette-medium)] transition-colors">
+                    WhatsApp {personalInfo.phone}
+                  </a>
+                </p>
               </div>
             </div>
           </div>

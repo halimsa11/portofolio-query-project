@@ -7,6 +7,7 @@ export interface PersonalInfo {
   socialLinks: { github: string; instagram: string };
   email: string;
   phone: string;
+  whatsappUrl: string;
   location: string;
   yearsExperience: number;
   totalProjects: number;
@@ -26,6 +27,7 @@ export const personalInfo: PersonalInfo = {
   },
   email: 'halimsamodra2009@gmail.com',
   phone: '+6281228025019',
+  whatsappUrl: 'https://wa.me/6281228025019',
   location: 'Semarang, Indonesia',
   yearsExperience: 2,
   totalProjects: 25,
