@@ -2,6 +2,7 @@
 
 import { MapPin } from "lucide-react";
 import { motion } from "motion/react";
+import Image from "next/image";
 import { personalInfo } from "@/data/portfolio";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 import SectionHeading from "@/components/ui/SectionHeading";
@@ -36,9 +37,12 @@ export default function About() {
               className="relative mx-auto w-48 h-48 md:w-80 md:h-80 rounded-2xl p-1 bg-gradient-to-r from-[var(--color-palette-medium)] to-[var(--color-palette-dark)]"
             >
               <div className="w-full h-full bg-[var(--theme-bg)] rounded-xl flex items-center justify-center relative overflow-hidden shadow-[inset_0_0_20px_var(--shadow-accent)]">
-                <div className="text-6xl md:text-8xl font-bold text-gradient">
-                  HS
-                </div>
+                <Image
+                  src="https://github.com/halimsa11.png"
+                  alt="Profile"
+                  fill
+                  className="object-cover"
+                />
               </div>
             </motion.div>
           </ScrollReveal>

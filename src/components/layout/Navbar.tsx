@@ -77,12 +77,7 @@ export default function Navbar() {
               <button
                 key={item.href}
                 onClick={() => scrollToSection(item.href.substring(1))}
-                className={cn(
-                  "text-sm font-medium transition-colors hover:text-[var(--color-palette-medium)]",
-                  activeSection === item.href.substring(1)
-                    ? "text-[var(--color-palette-medium)]"
-                    : "text-[var(--theme-text)]"
-                )}
+                className="text-sm font-medium transition-colors text-[var(--theme-text)] hover:text-[var(--color-palette-medium)]"
               >
                 {item.label}
               </button>
@@ -119,12 +114,7 @@ export default function Navbar() {
               <button
                 key={item.href}
                 onClick={() => scrollToSection(item.href.substring(1))}
-                className={cn(
-                  "text-2xl font-bold transition-all px-6 py-2 rounded-full",
-                  activeSection === item.href.substring(1)
-                    ? "text-[var(--color-palette-medium)] bg-[var(--color-palette-medium)]/10"
-                    : "text-[var(--theme-text)] hover:text-[var(--color-palette-medium)]"
-                )}
+                className="text-2xl font-bold transition-all px-6 py-2 rounded-full text-[var(--theme-text)] hover:text-[var(--color-palette-medium)]"
               >
                 {item.label}
               </button>

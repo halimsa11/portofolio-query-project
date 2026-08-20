@@ -67,7 +67,32 @@ export interface Project {
   featured: boolean;
 }
 
-export const projects: Project[] = [];
+export const projects: Project[] = [
+  {
+    id: 'financial-tracker',
+    title: 'Financial Tracker',
+    description: 'Aplikasi pencatatan keuangan pribadi untuk memantau pemasukan dan pengeluaran.',
+    longDescription: 'Financial Tracker adalah aplikasi web modern yang membantu pengguna mengelola keuangan pribadi mereka dengan fitur pencatatan transaksi, visualisasi data pengeluaran, dan manajemen anggaran bulanan.',
+    imageUrl: 'https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?q=80&w=1000&auto=format&fit=crop',
+    techStack: ['Next.js', 'React', 'Tailwind CSS'],
+    category: 'Web',
+    liveUrl: 'https://financial-trecker.vercel.app/',
+    githubUrl: 'https://github.com/halimsa11',
+    featured: true,
+  },
+  {
+    id: 'absensi-alatsar',
+    title: 'Absensi Al-Atsar',
+    description: 'Sistem informasi absensi modern untuk institusi pendidikan.',
+    longDescription: 'Sistem absensi digital yang memudahkan proses pencatatan kehadiran, pelaporan data secara real-time, dan manajemen data presensi harian dengan antarmuka yang intuitif dan responsif.',
+    imageUrl: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=1000&auto=format&fit=crop',
+    techStack: ['Next.js', 'React', 'Tailwind CSS'],
+    category: 'Web',
+    liveUrl: 'https://absensi-alatsar.vercel.app/',
+    githubUrl: 'https://github.com/halimsa11',
+    featured: true,
+  }
+];
 
 export interface Experience {
   company: string;
