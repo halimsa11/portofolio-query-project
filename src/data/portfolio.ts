@@ -77,7 +77,7 @@ export const projects: Project[] = [
     techStack: ['Next.js', 'React', 'Tailwind CSS'],
     category: 'Web',
     liveUrl: 'https://financial-trecker.vercel.app/',
-    githubUrl: 'https://github.com/halimsa11',
+    githubUrl: 'https://github.com/halimsa11/financial-trecker',
     featured: true,
   },
   {
@@ -89,7 +89,7 @@ export const projects: Project[] = [
     techStack: ['Next.js', 'React', 'Tailwind CSS'],
     category: 'Web',
     liveUrl: 'https://absensi-alatsar.vercel.app/',
-    githubUrl: 'https://github.com/halimsa11',
+    githubUrl: 'https://github.com/halimsa11/absensi-alatsar',
     featured: true,
   }
 ];

@@ -83,18 +83,36 @@ export default function Portfolio() {
                         </a>
                       </div>
                     </div>
-                    <div className="p-6">
+                    <div className="p-6 flex flex-col flex-1">
                       <div className="text-sm font-medium text-[var(--color-palette-medium)] mb-2">{project.category}</div>
                       <h3 className="text-xl font-bold text-[var(--theme-text)] mb-2">{project.title}</h3>
                       <p className="text-[var(--color-muted-foreground)] text-sm mb-4 line-clamp-3">
                         {project.description}
                       </p>
-                      <div className="flex flex-wrap gap-2">
+                      <div className="flex flex-wrap gap-2 mb-5">
                         {project.techStack.map((tech) => (
                           <span key={tech} className="px-3 py-1 text-xs rounded-full bg-[var(--theme-bg)] border border-[var(--theme-border)] text-[var(--theme-text)]">
                             {tech}
                           </span>
                         ))}
+                      </div>
+                      <div className="mt-auto pt-4 border-t border-[var(--theme-border)] flex items-center justify-between gap-3">
+                        <a
+                          href={project.liveUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-1.5 text-xs font-semibold text-[var(--color-palette-medium)] hover:underline"
+                        >
+                          <ExternalLink size={14} /> Live Demo
+                        </a>
+                        <a
+                          href={project.githubUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-1.5 text-xs font-semibold text-[var(--theme-text)] opacity-80 hover:opacity-100 hover:text-[var(--color-palette-medium)] transition-colors"
+                        >
+                          <Github size={14} /> GitHub Repo
+                        </a>
                       </div>
                     </div>
                   </motion.div>
