@@ -2,22 +2,26 @@
 
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Code, Database, Server, GitBranch, Cloud, Terminal, Layers, Wind, Triangle } from 'lucide-react';
+import { Code } from 'lucide-react';
+import { FaHtml5, FaCss3Alt, FaJsSquare, FaNodeJs, FaGitAlt, FaDatabase, FaCloud } from 'react-icons/fa';
+import { SiTailwindcss, SiNextdotjs, SiPostgresql, SiVercel } from 'react-icons/si';
 import ScrollReveal from '@/components/ui/ScrollReveal';
 import SectionHeading from '@/components/ui/SectionHeading';
 import { skills } from '@/data/portfolio';
 import { cn } from '@/lib/utils';
 
 const iconMap: Record<string, React.FC<{ className?: string }>> = {
-  code: Code,
-  triangle: Triangle,
-  wind: Wind,
-  layers: Layers,
-  server: Server,
-  database: Database,
-  terminal: Terminal,
-  'git-branch': GitBranch,
-  cloud: Cloud,
+  html: FaHtml5,
+  css: FaCss3Alt,
+  javascript: FaJsSquare,
+  tailwind: SiTailwindcss,
+  nextjs: SiNextdotjs,
+  nodejs: FaNodeJs,
+  postgresql: SiPostgresql,
+  drizzle: FaDatabase,
+  neon: FaCloud,
+  git: FaGitAlt,
+  vercel: SiVercel,
 };
 
 export default function Skills() {

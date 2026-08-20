@@ -41,17 +41,17 @@ export interface Skill {
 }
 
 export const skills: Skill[] = [
-  { name: 'HTML', iconName: 'code', level: 90, category: 'Frontend' },
-  { name: 'CSS', iconName: 'wind', level: 85, category: 'Frontend' },
-  { name: 'JavaScript', iconName: 'terminal', level: 85, category: 'Frontend' },
-  { name: 'Tailwind CSS', iconName: 'wind', level: 88, category: 'Frontend' },
-  { name: 'Next.js', iconName: 'triangle', level: 80, category: 'Frontend' },
-  { name: 'Node.js', iconName: 'server', level: 78, category: 'Backend' },
-  { name: 'PostgreSQL', iconName: 'database', level: 75, category: 'Backend' },
-  { name: 'Drizzle', iconName: 'layers', level: 70, category: 'Backend' },
-  { name: 'Neon', iconName: 'cloud', level: 72, category: 'Backend' },
-  { name: 'Git', iconName: 'git-branch', level: 85, category: 'Tools' },
-  { name: 'Vercel', iconName: 'triangle', level: 82, category: 'Tools' },
+  { name: 'HTML', iconName: 'html', level: 90, category: 'Frontend' },
+  { name: 'CSS', iconName: 'css', level: 85, category: 'Frontend' },
+  { name: 'JavaScript', iconName: 'javascript', level: 85, category: 'Frontend' },
+  { name: 'Tailwind CSS', iconName: 'tailwind', level: 88, category: 'Frontend' },
+  { name: 'Next.js', iconName: 'nextjs', level: 80, category: 'Frontend' },
+  { name: 'Node.js', iconName: 'nodejs', level: 78, category: 'Backend' },
+  { name: 'PostgreSQL', iconName: 'postgresql', level: 75, category: 'Backend' },
+  { name: 'Drizzle', iconName: 'drizzle', level: 70, category: 'Backend' },
+  { name: 'Neon', iconName: 'neon', level: 72, category: 'Backend' },
+  { name: 'Git', iconName: 'git', level: 85, category: 'Tools' },
+  { name: 'Vercel', iconName: 'vercel', level: 82, category: 'Tools' },
 ];
 
 export interface Project {
